@@ -1,0 +1,438 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.9.7/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "postgresql",
+    "connection-string": "Server=20.213.84.215;Database=banpu_energy_trading;Port=55432;User Id=banpu_aim_intern;Password=h?F76VU*4P)r9w]H;",
+    "options": {}
+  },
+  "runtime": {
+    "rest": {
+      "enabled": true,
+      "path": "/api",
+      "request-body-strict": true
+    },
+    "graphql": {
+      "enabled": true,
+      "path": "/graphql",
+      "allow-introspection": true
+    },
+    "host": {
+      "cors": {
+        "origins": [],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      },
+      "mode": "development"
+    }
+  },
+  "entities": {
+    "price": {
+      "source": {
+        "object": "DBO.PRICE",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "price",
+          "plural": "prices"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ]
+    },
+    "asx": {
+      "source": {
+        "object": "DBO.ASX",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "asx",
+          "plural": "asxes"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "interconnectorres": {
+      "source": {
+        "object": "DBO.INTERCONNECTORRES",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "interconnectorres",
+          "plural": "interconnectorres"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "p5min_interconnectorsoln": {
+      "source": {
+        "object": "DBO.P5MIN_INTERCONNECTORSOLN",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "p5min_interconnectorsoln",
+          "plural": "p5min_interconnectorsolns"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "p5min_regionsolution": {
+      "source": {
+        "object": "DBO.P5MIN_REGIONSOLUTION",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "p5min_regionsolution",
+          "plural": "p5min_regionsolutions"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "predispatchinterconnectorres": {
+      "source": {
+        "object": "DBO.PREDISPATCHINTERCONNECTORRES",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "predispatchinterconnectorres",
+          "plural": "predispatchinterconnectorres"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "predispatchprice": {
+      "source": {
+        "object": "DBO.PREDISPATCHPRICE",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "predispatchprice",
+          "plural": "predispatchprices"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "predispatchregionsum": {
+      "source": {
+        "object": "DBO.PREDISPATCHREGIONSUM",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "predispatchregionsum",
+          "plural": "predispatchregionsums"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "weather_historical": {
+      "source": {
+        "object": "DBO.WEATHER_HISTORICAL",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "weather_historical",
+          "plural": "weather_historicals"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "weather_forecast": {
+      "source": {
+        "object": "DBO.WEATHER_FORECAST",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "weather_forecast",
+          "plural": "weather_forecasts"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "stpasa_regionsolution": {
+      "source": {
+        "object": "DBO.STPASA_REGIONSOLUTION",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "stpasa_regionsolution",
+          "plural": "stpasa_regionsolutions"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "stpasa_interconnectorsoln": {
+      "source": {
+        "object": "DBO.STPASA_INTERCONNECTORSOLN",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "stpasa_interconnectorsoln",
+          "plural": "stpasa_interconnectorsolns"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "rooftop_pv_actual": {
+      "source": {
+        "object": "DBO.ROOFTOP_PV_ACTUAL",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "rooftop_pv_actual",
+          "plural": "rooftop_pv_actuals"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "regionsum": {
+      "source": {
+        "object": "DBO.REGIONSUM",
+        "type": "view",
+        "key-fields": [
+          "ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "regionsum",
+          "plural": "regionsums"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
